@@ -1,7 +1,7 @@
 html body {
     box-sizing: border-box;
     margin: 0;
-    background-color:rgb(228, 56, 13);
+    background-color:rgb(23, 72, 177);
 }
 
 .container {
@@ -62,10 +62,121 @@ html body {
 .tasks {
     width: 100%;
     height: 25rem;
+    overflow: hidden;
 }
 
-.tasks__list--completed {
+.tasks__remain {
     display: none;
+}
+
+.tasks__remain--show {
+    display: block;
+}
+
+.tasks__list {
+    padding: 0;
+}
+
+.tasks__list:empty {
+    display: none;
+}
+
+.tasks__list:empty + .warning {
+    display: flex;
+    flex-direction: column;
+}
+
+.li-items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2rem;
+    font-size: 2rem;
+    border: 1px solid transparent;
+    background-color: rgb(161, 208, 216);
+    border-radius: .2rem;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    overflow: hidden;
+}
+
+.slide-in {
+    animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+    0% {transform: translatex(100%)}
+    100% { transform: translatex(0%); }
+}
+
+.li-items:hover.li-items::after {
+    padding: .5rem;
+    margin-bottom: .5rem;
+    position: absolute;
+    content: "\f1f8";
+    font-family: FontAwesome;
+    right: 0;
+    top: 0;
+    background-color: rgb(255, 0, 0);
+    border-radius: 0 .2rem .2rem 0;
+    height: 100%;
+    width: 3rem;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+    animation-name: fade-in;
+    animation-duration: .5s;
+}
+
+@keyframes fade-in {
+    0% {
+        width: 0;
+        content:'';
+    }
+    100% {
+        width: 3rem;
+        content: "\f1f8";
+    }
+}
+
+.deleteButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 3.1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.label {
+    width: 100%;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 20rem;
+    left: 0;
+    width: 100%;
+}
+
+.fa.fa-beer {
+    font-size: 4rem;
+    color:rgb(170, 168, 15);
+}
+
+.warning__span {
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .buttons {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,8 +17,12 @@
                 <input class="input__button" type="submit" value="+">
             </form>
             <div class="tasks">
-                <p class="tasks__remain"></p>
-                <div class="tasks__list"></div>
+                <p class="tasks__remain">You have <span class="todoItemNumber"></span> pending items</p>
+                <ul class="tasks__list"></ul>
+                <div class="warning">
+                    <i class="fa fa-beer"></i>
+                    <span class="warning__span">Time to chill! You have no todos.</span>
+                </div>
                 <div class="tasks__list--completed"></div>
             </div>
             <div class="buttons">
